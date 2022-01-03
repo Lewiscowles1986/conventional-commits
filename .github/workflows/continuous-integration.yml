@@ -163,6 +163,10 @@ jobs:
         with:
           dependency-versions: "${{ matrix.dependencies }}"
 
+      - name: "PHPInfo"
+        shell: "bash"
+        run: php -r 'phpinfo();'
+
       - name: "Run unit tests (PHPUnit)"
         shell: "bash"
         run: "composer dev:test:unit"
